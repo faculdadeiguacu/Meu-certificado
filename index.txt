@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de Certificado - Ana Lívia Braga</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f4f8; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .certificate-card { background: white; width: 90%; max-width: 500px; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-top: 8px solid #1a3d7c; }
+        .header { text-align: center; margin-bottom: 25px; }
+        .header h1 { color: #1a3d7c; font-size: 22px; margin: 5px 0; }
+        .status-badge { background: #e8f5e9; color: #2e7d32; padding: 10px; border-radius: 50px; font-weight: bold; font-size: 14px; display: inline-block; margin-bottom: 20px; border: 1px solid #c8e6c9; }
+        .info-table { width: 100%; border-collapse: collapse; margin-bottom: 25px; }
+        .info-table td { padding: 12px 8px; border-bottom: 1px solid #f0f0f0; font-size: 14px; color: #333; }
+        .info-table .label { font-weight: bold; color: #666; width: 35%; }
+        .qr-container { background: #fafafa; padding: 20px; border-radius: 10px; text-align: center; border: 1px dashed #ccc; }
+        #qrcode { display: flex; justify-content: center; margin: 15px 0; }
+        .footer-text { font-size: 11px; color: #999; text-align: center; margin-top: 20px; line-height: 1.4; }
+    </style>
+</head>
+<body>
+
+<div class="certificate-card">
+    <div class="header">
+        <div class="status-badge">✔ CERTIFICADO AUTÊNTICO</div>
+        <h1>Verificação de Registro</h1>
+        <p style="font-size: 12px; color: #555;">Faculdade Iguaçu - Portaria MEC 1.640 [cite: 17]</p>
+    </div>
+
+    <table class="info-table">
+        <tr><td class="label">Aluno:</td><td>Ana Lívia Paes da Conceição Braga [cite: 8]</td></tr>
+        <tr><td class="label">CPF:</td><td>100.652.077-50 [cite: 9]</td></tr>
+        <tr><td class="label">Curso:</td><td>Pós-Graduação em Pedagogia Social e Educação Especial e Inclusiva [cite: 9]</td></tr>
+        <tr><td class="label">Carga Horária:</td><td>720 horas [cite: 15]</td></tr>
+        <tr><td class="label">Registro:</td><td>202337821 [cite: 20]</td></tr>
+        <tr><td class="label">Livro/Folha:</td><td>Livro 3 / Folha 17 [cite: 21, 22]</td></tr>
+    </table>
+
+    <div class="qr-container">
+        <span style="font-size: 13px; font-weight: bold; color: #1a3d7c;">CONFERÊNCIA RÁPIDA</span>
+        <div id="qrcode"></div>
+        <p style="font-size: 11px; color: #777; margin: 0;">Aponte a câmera para validar os dados</p>
+    </div>
+
+    <div class="footer-text">
+        Este certificado cumpre a Resolução CNE/CES nº 1/2018. [cite: 19]<br>
+        Emitido em Capanema/PR em 04/11/2024. [cite: 11]
+    </div>
+</div>
+
+<script>
+    // Gera o QR Code com o link de validação
+    new QRCode(document.getElementById("qrcode"), {
+        text: "https://faculdadeiguacu.com.br/verificacao/202337821",
+        width: 140,
+        height: 140,
+        colorDark : "#1a3d7c",
+        colorLight : "#ffffff"
+    });
+</script>
+
+</body>
+</html>
